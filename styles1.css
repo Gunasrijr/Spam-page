@@ -1,0 +1,140 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Main Content Layout */
+main {
+    padding: 20px;
+}
+
+/* Event Grid */
+.event-grid {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between cards */
+    gap: 20px; /* Adds spacing between the cards */
+}
+
+.event-card {
+    perspective: 1000px; /* Enables 3D effect */
+    width: 23%; /* Ensures four cards fit in one line with some space */
+    height: 400px; /* Adjust height for a better look */
+    border-radius: 10px;
+}
+
+.event-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* Smoother transition */
+}
+
+.event-card:hover .event-card-inner {
+    transform: rotateY(180deg); /* Flip effect on hover */
+}
+
+.event-card-front, .event-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the backface when not visible */
+    border-radius: 10px;
+}
+
+/* Front side */
+.event-card-front {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.event-card-front img {
+    max-width: 100%;
+    height: 250px; /* Increase height of the image */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.event-info h4 {
+    margin: 10px 0;
+    font-size: 20px; /* Increase font size */
+}
+
+/* Back side */
+.event-card-back {
+    background-color: #f8f8f8;
+    transform: rotateY(180deg); /* Back side starts flipped */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.event-card-back h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.event-card-back p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.register-btn {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Slightly larger button */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #005f73;
+}
